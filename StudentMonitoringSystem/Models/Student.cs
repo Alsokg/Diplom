@@ -7,10 +7,15 @@ namespace StudentMonitoringSystem.Models
 {
     public class Student
     {
+        [HiddenInput (DisplayValue = false)]
         public int Id { get; set; }
+        [Dispaly (Name = "FirstName")]
         public String Name { get; set; }
+        [Dispaly (Name = "SecondName")]
         public String SurName { get; set; }
+        [Display (Name = "StudentBookID")]
         public String StudentBookNumber { get; set; }
+        [HiddenInput (DisplayValue = false)]
         public int? GroupId { get; set; }
         public virtual Group Group { get; set; }
 
