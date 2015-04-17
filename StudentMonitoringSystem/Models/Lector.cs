@@ -7,7 +7,7 @@ namespace StudentMonitoringSystem.Models
 {
     public class Lector
     {
-        [HiddenInput (DisplayName = false)]
+        [HiddenInput (DisplayValue = false)]
         public int Id { get; set; }
         [Display (Name = "FirstName")]
         public String Name { get; set; }
