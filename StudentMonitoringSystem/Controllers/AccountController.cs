@@ -155,6 +155,11 @@ namespace StudentMonitoringSystem.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    if(model.isLector == false)
+                    await UserManeget.AddToRoleAsync(user.id,"Student");
+                    else
+                    await UserManeget.AddToRoleAsync(user.id,"Lector");
+                    
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
