@@ -6,6 +6,23 @@ using System.Web;
 
 namespace StudentMonitoringSystem.Models
 {
+	public class AppDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+	{
+    		protected override void Seed(ApplicationDbContext context)
+    		{
+    			var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+    	
+    			var role1 = new IdentityRole {Name = "Admin"};
+    			var role2 = new IdentityRole {Name = "Lector"};
+    			var role3 = new IdentityRole {Name = "Student"};
+    	
+    			roleManeger.Create(role1);
+    			roleManeger.Create(role2);
+    			roleManeger.Create(role3);
+    	
+    			base.Seed(context);
+    }
+}
     public class DbInitialzer:DropCreateDatabaseAlways<UniversityContext>
     {
         protected  override void Seed (UniversityContext context){
