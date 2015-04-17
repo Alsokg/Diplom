@@ -267,10 +267,168 @@ namespace StudentMonitoringSystem.Models
 				context.MarkPoint.Add(mp22);
 				context.MarkPoint.Add(mp23);
 				
-				context.MarkPoint.Add(mp1);
-				context.MarkPoint.Add(mp1);
-				context.MarkPoint.Add(mp1);
-				context.MarkPoint.Add(mp1);
+				context.MarkPoint.Add(mp31);
+				context.MarkPoint.Add(mp32);
+				context.MarkPoint.Add(mp33);
+				context.MarkPoint.Add(mp34);
+				context.MarkPoint.Add(mp35);
+				context.MarkPoint.Add(mp36);
+				context.MarkPoint.Add(mp37);
+				context.MarkPoint.Add(mp38);
+				context.MarkPoint.Add(mp39);
+				context.MarkPoint.Add(mp310);
+				context.MarkPoint.Add(mp311);
+				
+				context.MarkPoint.Add(mp41);
+				context.MarkPoint.Add(mp42);
+				context.MarkPoint.Add(mp43);
+				context.MarkPoint.Add(mp44);
+				context.MarkPoint.Add(mp45);
+				context.MarkPoint.Add(mp46);
+				
+				context.MarkPoint.Add(mp51);
+				context.MarkPoint.Add(mp52);
+				context.MarkPoint.Add(mp53);
+				context.MarkPoint.Add(mp54);
+				
+				context.MarkPoint.Add(mp61);
+				context.MarkPoint.Add(mp62);
+				context.MarkPoint.Add(mp63);
+				context.MarkPoint.Add(mp64);
+				context.MarkPoint.Add(mp65);
+				context.MarkPoint.Add(mp66);
+				context.MarkPoint.Add(mp67);
+				context.MarkPoint.Add(mp68);
+				
+					context.Mark.Add(m11);
+					context.Mark.Add(m21); 
+					context.Mark.Add(m31);
+					context.Mark.Add(m41); 
+					context.Mark.Add(m51);
+					
+					context.Mark.Add(m211); 
+					context.Mark.Add(m221);
+					context.Mark.Add(m231);
+					
+					context.Mark.Add(m311);
+					context.Mark.Add(m321);
+					context.Mark.Add(m331);
+					context.Mark.Add(m341);
+					context.Mark.Add(m351);
+					context.Mark.Add(m361);
+					context.Mark.Add(m371);
+					context.Mark.Add(m381);
+					context.Mark.Add(m391);
+					context.Mark.Add(m3101);
+					context.Mark.Add(m3111);
+					
+					context.Mark.Add(m411);
+					context.Mark.Add(m421);
+					context.Mark.Add(m431);
+					context.Mark.Add(m441);
+					context.Mark.Add(m451);
+					context.Mark.Add(m461);
+					
+					context.Mark.Add(m511);
+					context.Mark.Add(m521);
+					context.Mark.Add(m531);
+					context.Mark.Add(m541);
+					
+					context.Mark.Add(m611);
+					context.Mark.Add(m621);
+					context.Mark.Add(m631);
+					context.Mark.Add(m641);
+					context.Mark.Add(m651);
+					context.Mark.Add(m661);
+					context.Mark.Add(m671);
+					context.Mark.Add(m681);
+					
+					context.Mark.Add(m12);
+					context.Mark.Add(m22); 
+					context.Mark.Add(m32);
+					context.Mark.Add(m42); 
+					context.Mark.Add(m52);
+					
+					context.Mark.Add(m212); 
+					context.Mark.Add(m222);
+					context.Mark.Add(m232);
+					
+					context.Mark.Add(m312);
+					context.Mark.Add(m322);
+					context.Mark.Add(m332);
+					context.Mark.Add(m342);
+					context.Mark.Add(m352);
+					context.Mark.Add(m362);
+					context.Mark.Add(m372);
+					context.Mark.Add(m382);
+					context.Mark.Add(m392);
+					context.Mark.Add(m3102);
+					context.Mark.Add(m3112);
+					
+					context.Mark.Add(m412);
+					context.Mark.Add(m422);
+					context.Mark.Add(m432);
+					context.Mark.Add(m442);
+					context.Mark.Add(m452);
+					context.Mark.Add(m462);
+					
+					context.Mark.Add(m512);
+					context.Mark.Add(m522);
+					context.Mark.Add(m532);
+					context.Mark.Add(m542);
+					
+					context.Mark.Add(m612);
+					context.Mark.Add(m622);
+					context.Mark.Add(m632);
+					context.Mark.Add(m642);
+					context.Mark.Add(m652);
+					context.Mark.Add(m662);
+					context.Mark.Add(m672);
+					context.Mark.Add(m682);
+				
+					context.Mark.Add(m13);
+					context.Mark.Add(m23); 
+					context.Mark.Add(m33);
+					context.Mark.Add(m43); 
+					context.Mark.Add(m53);
+					
+					context.Mark.Add(m213); 
+					context.Mark.Add(m223);
+					context.Mark.Add(m233);
+					
+					context.Mark.Add(m313);
+					context.Mark.Add(m323);
+					context.Mark.Add(m333);
+					context.Mark.Add(m343);
+					context.Mark.Add(m353);
+					context.Mark.Add(m363);
+					context.Mark.Add(m373);
+					context.Mark.Add(m383);
+					context.Mark.Add(m393);
+					context.Mark.Add(m3103);
+					context.Mark.Add(m3113);
+					
+					context.Mark.Add(m413);
+					context.Mark.Add(m423);
+					context.Mark.Add(m433);
+					context.Mark.Add(m443);
+					context.Mark.Add(m453);
+					context.Mark.Add(m463);
+					
+					context.Mark.Add(m513);
+					context.Mark.Add(m523);
+					context.Mark.Add(m533);
+					context.Mark.Add(m543);
+					
+					context.Mark.Add(m613);
+					context.Mark.Add(m623);
+					context.Mark.Add(m633);
+					context.Mark.Add(m643);
+					context.Mark.Add(m653);
+					context.Mark.Add(m663);
+					context.Mark.Add(m673);
+					context.Mark.Add(m683);
+				
 					base.Seed(context);
 
 
