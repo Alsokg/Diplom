@@ -8,6 +8,7 @@ namespace StudentMonitoringSystem.Models
     public class Subject
     {
         [HiddenInput (DisplayValue = false)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Display (Name = "Course name") ]
         public String Name { get; set; }
