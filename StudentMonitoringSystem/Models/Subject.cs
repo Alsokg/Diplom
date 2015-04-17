@@ -11,6 +11,7 @@ namespace StudentMonitoringSystem.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Display (Name = "Course name") ]
+        [Required]
         public String Name { get; set; }
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<MarkPoint> Points { get; set; }
