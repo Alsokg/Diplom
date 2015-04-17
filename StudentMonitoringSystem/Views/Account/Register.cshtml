@@ -51,14 +51,12 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 <script>
-    $('#isLector').click(function () {
-    if ($(this).attr("checked")) {
-        $('.student').attr('disabled', 'disabled'); //Disable
-
-        return;
-    }
-    $('.student').removeAttr('disabled'); //Enable
- });
+    $('.lector').click(function(){
+  if ((this).checked == false)
+$(".student").prop('disabled', false);
+  else
+    $(".student").prop('disabled', true);
+  });
     </script>
 }
 
