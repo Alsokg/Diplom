@@ -219,6 +219,58 @@ namespace StudentMonitoringSystem.Models
 					Mark m663 = new Mark {Id = 109, Value =15 , MarkPointId = 35, StudentId = 3};
 					Mark m673 = new Mark {Id = 110, Value =5 , MarkPointId = 36, StudentId = 3};
 					Mark m683 = new Mark {Id = 111, Value =15 , MarkPointId = 37, StudentId = 3};
+					
+			context.University.Add(univ);
+			context.Faculty.Add(fac);
+			context.Group.Add(gr);
+			
+				conext.Student.Add(st1);
+				conext.Student.Add(st2);
+				conext.Student.Add(st3);
+				conext.Student.Add(st4);
+				conext.Student.Add(st5);
+				conext.Student.Add(st6);
+				conext.Student.Add(st7);
+				conext.Student.Add(st8);
+				conext.Student.Add(st9);
+				conext.Student.Add(st10);	
+				conext.Student.Add(st11);
+				conext.Student.Add(st12);
+				conext.Student.Add(st13);
+				conext.Student.Add(st14);
+				conext.Student.Add(st15);	
+				conext.Student.Add(st16);
+				conext.Student.Add(st17);
+				conext.Student.Add(st18);
+				conext.Student.Add(st19);
+				conext.Student.Add(st20);
+				
+				conext.Lector.Add(l1);
+				conext.Lector.Add(l2);
+				conext.Lector.Add(l3);
+				conext.Lector.Add(l4);
+				
+				conext.Subject.Add(s1);
+				conext.Subject.Add(s2);
+				conext.Subject.Add(s3);
+				conext.Subject.Add(s4);
+				conext.Subject.Add(s5);
+				conext.Subject.Add(s6);
+				
+				context.MarkPoint.Add(mp1);
+				context.MarkPoint.Add(mp2);
+				context.MarkPoint.Add(mp3);
+				context.MarkPoint.Add(mp4);
+				context.MarkPoint.Add(mp5);
+				
+				context.MarkPoint.Add(mp21);
+				context.MarkPoint.Add(mp22);
+				context.MarkPoint.Add(mp23);
+				
+				context.MarkPoint.Add(mp1);
+				context.MarkPoint.Add(mp1);
+				context.MarkPoint.Add(mp1);
+				context.MarkPoint.Add(mp1);
 					base.Seed(context);
 
 
