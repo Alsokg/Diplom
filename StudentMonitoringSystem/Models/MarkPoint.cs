@@ -8,6 +8,7 @@ namespace StudentMonitoringSystem.Models
     public class MarkPoint
     {
         [HiddenInput (DisplayName = false)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Display (Name = "Task name")]
         public String Name { get; set; }
