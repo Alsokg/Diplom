@@ -7,9 +7,13 @@ namespace StudentMonitoringSystem.Models
 {
     public class Mark
     {
+        [HiddenInput (DisplayValue = false)]
         public int Id { get; set; }
+        [Display (Name = "Decemical Value")]
         public double Value { get; set; }
+        [HiddenInput (DisplayValue = false)]
         public int? MarkPointId { get; set; }
+        [HiddenInput (DispalayValue = false)]
         public int? StudentId { get; set; }
         public virtual Student Student { get; set; }
         public virtual MarkPoint MarkPoint { get; set; }
