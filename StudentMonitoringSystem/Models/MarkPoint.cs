@@ -16,6 +16,7 @@ namespace StudentMonitoringSystem.Models
         [HiddenInput (DisplayName = false)]
         public int? SubjectId { get; set; }
         [Display (Name = "Maximum marks value")]
+        [Range(0,100)]
         [Required]
         public double maxValue { get; set; }
         [Display (Name = "Deadline")]
