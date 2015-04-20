@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Individual Table</h2>
+<div>
+    <h4>@ViewData["StudentFullName"]</h4>
+    <table>
+        @foreach (var item in ViewData["Subjects"] as ICollection<StudentMonitoringSystem.Models.Subject>)
+        {
+
+            <tr>
+                <th>@item.Name</th>
+            </tr>
+
+        }
+    </table>
+</div>
+

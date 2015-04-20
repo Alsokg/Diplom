@@ -21,6 +21,7 @@ namespace StudentMonitoringSystem.Models
         public String StudentBookNumber { get; set; }
         [HiddenInput (DisplayValue = false)]
         public int? GroupId { get; set; }
+        public virtual ICollection<Mark> Marks { get; set; }
         public virtual Group Group { get; set; }
 
         public virtual ICollection<Subject> Subjects { get; set; }

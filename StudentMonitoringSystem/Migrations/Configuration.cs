@@ -9,7 +9,7 @@ namespace StudentMonitoringSystem.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "StudentMonitoringSystem.Models.UniversityContext";
         }
 

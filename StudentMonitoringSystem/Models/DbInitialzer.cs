@@ -17,27 +17,27 @@ namespace StudentMonitoringSystem.Models
 			Faculty fac = new Faculty {Id = 1, Name = "Applied Mathematics and Informatics", UniversityId = 1, University = univ};
 			
 				Group gr = new Group {Id = 1, Name = "System analysis 42", FacultyId = 1, Faculty = fac };
-				
-					Student st1 = new Student {Id = 1, Name = "Andriy", SurName = "Buy", GroupId = 1};
-					Student st2 = new Student {Id = 2, Name = "Andriy", SurName = "Vercimaga", GroupId = 1};
-					Student st3 = new Student {Id = 3, Name = "Andriy", SurName = "Vengrunovuch", GroupId = 1};
-					Student st4 = new Student {Id = 4, Name = "Taras", SurName = "Viter", GroupId = 1};
-					Student st5 = new Student {Id = 5, Name = "Rostuslav", SurName = "Dembickuy", GroupId = 1};
-					Student st6 = new Student {Id = 6, Name = "Andriy", SurName = "Derdzyak", GroupId = 1};
-					Student st7 = new Student {Id = 7, Name = "Orest", SurName = "Gurskuy", GroupId = 1};
-					Student st8 = new Student {Id = 8, Name = "Mykola", SurName = "Zubekhin", GroupId = 1};
-					Student st9 = new Student {Id = 9, Name = "Maryan", SurName = "Kalapach", GroupId = 1};
-					Student st10 = new Student {Id = 10, Name = "Bogdan", SurName = "Kovalchuk", GroupId = 1};
-					Student st11 = new Student {Id = 11, Name = "Maryan", SurName = "Onusko", GroupId = 1};
-					Student st12 = new Student {Id = 12, Name = "Taras", SurName = "Savitskuy", GroupId = 1};
-					Student st13 = new Student {Id = 13, Name = "Bogdan", SurName = "Ystyak", GroupId = 1};
-					Student st14 = new Student {Id = 14, Name = "Nastya", SurName = "Sokolova", GroupId = 1};
-					Student st15 = new Student {Id = 15, Name = "Ivan", SurName = "Fedushun", GroupId = 1};
-					Student st16 = new Student {Id = 16, Name = "Bogdan", SurName = "Polidovuch", GroupId = 1};
-					Student st17 = new Student {Id = 17, Name = "Khristina", SurName = "Pochunok", GroupId = 1};
-					Student st18 = new Student {Id = 18, Name = "Orest-Andriy", SurName = "Senkiv", GroupId = 1};
-					Student st19 = new Student {Id = 19, Name = "Oleg", SurName = "Yackiv", GroupId = 1};
-					Student st20 = new Student {Id = 20, Name = "Roman", SurName = "Melnuk", GroupId = 1 };
+
+                Student st1 = new Student { Id = 1, Name = "Andriy", SurName = "Buy", GroupId = 1, StudentBookNumber ="12121212"};
+                Student st2 = new Student { Id = 2, Name = "Andriy", SurName = "Vercimaga", GroupId = 1, StudentBookNumber = "11111113" };
+                Student st3 = new Student { Id = 3, Name = "Andriy", SurName = "Vengrunovuch", GroupId = 1, StudentBookNumber = "11111114" };
+                Student st4 = new Student { Id = 4, Name = "Taras", SurName = "Viter", GroupId = 1, StudentBookNumber = "11111115" };
+                Student st5 = new Student { Id = 5, Name = "Rostuslav", SurName = "Dembickuy", GroupId = 1, StudentBookNumber = "11111116" };
+                Student st6 = new Student { Id = 6, Name = "Andriy", SurName = "Derdzyak", GroupId = 1, StudentBookNumber = "11111117" };
+                Student st7 = new Student { Id = 7, Name = "Orest", SurName = "Gurskuy", GroupId = 1, StudentBookNumber = "11111118" };
+                Student st8 = new Student { Id = 8, Name = "Mykola", SurName = "Zubekhin", GroupId = 1, StudentBookNumber = "11111119" };
+                Student st9 = new Student { Id = 9, Name = "Maryan", SurName = "Kalapach", GroupId = 1, StudentBookNumber = "11111110" };
+                Student st10 = new Student { Id = 10, Name = "Bogdan", SurName = "Kovalchuk", GroupId = 1, StudentBookNumber = "11111111" };
+                Student st11 = new Student { Id = 11, Name = "Maryan", SurName = "Onusko", GroupId = 1, StudentBookNumber = "11111112" };
+                Student st12 = new Student { Id = 12, Name = "Taras", SurName = "Savitskuy", GroupId = 1, StudentBookNumber = "11111122" };
+                Student st13 = new Student { Id = 13, Name = "Bogdan", SurName = "Ystyak", GroupId = 1, StudentBookNumber = "11111123" };
+                Student st14 = new Student { Id = 14, Name = "Nastya", SurName = "Sokolova", GroupId = 1, StudentBookNumber = "111111135" };
+                Student st15 = new Student { Id = 15, Name = "Ivan", SurName = "Fedushun", GroupId = 1, StudentBookNumber = "111111137" };
+                Student st16 = new Student { Id = 16, Name = "Bogdan", SurName = "Polidovuch", GroupId = 1, StudentBookNumber = "111111136" };
+                Student st17 = new Student { Id = 17, Name = "Khristina", SurName = "Pochunok", GroupId = 1, StudentBookNumber = "111111139" };
+                Student st18 = new Student { Id = 18, Name = "Orest-Andriy", SurName = "Senkiv", GroupId = 1, StudentBookNumber = "111111138" };
+                Student st19 = new Student { Id = 19, Name = "Oleg", SurName = "Yackiv", GroupId = 1, StudentBookNumber = "111111131" };
+                Student st20 = new Student { Id = 20, Name = "Roman", SurName = "Melnuk", GroupId = 1, StudentBookNumber = "111111132" };
 					
 					Subject s1 = new Subject {Id = 1, Name = "Informatic", Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};
 					Subject s2 = new Subject {Id = 2, Name = "DataBase",Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};

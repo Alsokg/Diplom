@@ -162,13 +162,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarksController.cs" />
+    <Compile Include="Controllers\StudentMarkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504200830264_InitialCreate.cs" />
+    <Compile Include="Migrations\201504200830264_InitialCreate.Designer.cs">
+      <DependentUpon>201504200830264_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbInitializer.cs" />
-    <Compile Include="Models\Date.cs" />
     <Compile Include="Models\DbInitialzer.cs" />
     <Compile Include="Models\Dispaly.cs" />
     <Compile Include="Models\Faculty.cs" />
@@ -247,6 +251,7 @@
     <Content Include="Views\Marks\Details.cshtml" />
     <Content Include="Views\Marks\Edit.cshtml" />
     <Content Include="Views\Marks\Index.cshtml" />
+    <Content Include="Views\StudentMark\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -258,6 +263,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201504200830264_InitialCreate.resx">
+      <DependentUpon>201504200830264_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
