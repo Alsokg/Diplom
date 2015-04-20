@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace StudentMonitoringSystem.Models
 {
@@ -15,7 +18,7 @@ namespace StudentMonitoringSystem.Models
         public double Value { get; set; }
         [HiddenInput (DisplayValue = false)]
         public int? MarkPointId { get; set; }
-        [HiddenInput (DispalayValue = false)]
+        [HiddenInput (DisplayValue = false)]
         public int? StudentId { get; set; }
         public virtual Student Student { get; set; }
         public virtual MarkPoint MarkPoint { get; set; }

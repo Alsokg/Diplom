@@ -156,9 +156,9 @@ namespace StudentMonitoringSystem.Controllers
                 if (result.Succeeded)
                 {
                     if(model.isLector == false)
-                    await UserManeget.AddToRoleAsync(user.id,"Student");
+                    await UserManager.AddToRoleAsync(user.Id,"Student");
                     else
-                    await UserManeget.AddToRoleAsync(user.id,"Lector");
+                    await UserManager.AddToRoleAsync(user.Id,"Lector");
                     
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     

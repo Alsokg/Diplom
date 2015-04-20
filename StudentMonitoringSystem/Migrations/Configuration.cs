@@ -5,15 +5,15 @@ namespace StudentMonitoringSystem.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<StudentMonitoringSystem.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<StudentMonitoringSystem.Models.UniversityContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "StudentMonitoringSystem.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
+            ContextKey = "StudentMonitoringSystem.Models.UniversityContext";
         }
 
-        protected override void Seed(StudentMonitoringSystem.Models.ApplicationDbContext context)
+        protected override void Seed(StudentMonitoringSystem.Models.UniversityContext context)
         {
             //  This method will be called after migrating to the latest version.
 

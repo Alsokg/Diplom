@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace StudentMonitoringSystem.Models
 {
@@ -10,9 +13,9 @@ namespace StudentMonitoringSystem.Models
         [HiddenInput (DisplayValue = false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Dispaly (Name = "FirstName")]
+        [Display (Name = "FirstName")]
         public String Name { get; set; }
-        [Dispaly (Name = "SecondName")]
+        [Display (Name = "SecondName")]
         public String SurName { get; set; }
         [Display (Name = "StudentBookID")]
         public String StudentBookNumber { get; set; }

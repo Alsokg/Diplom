@@ -19,6 +19,7 @@ namespace StudentMonitoringSystem
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer(new DbInitialzer());
+            Database.SetInitializer(new AppDbInitializer());
         }
     }
 }

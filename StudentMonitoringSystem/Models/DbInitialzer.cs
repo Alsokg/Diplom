@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,23 +8,7 @@ using System.Web;
 
 namespace StudentMonitoringSystem.Models
 {
-	public class AppDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
-	{
-    		protected override void Seed(ApplicationDbContext context)
-    		{
-    			var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-    	
-    			var role1 = new IdentityRole {Name = "Admin"};
-    			var role2 = new IdentityRole {Name = "Lector"};
-    			var role3 = new IdentityRole {Name = "Student"};
-    	
-    			roleManeger.Create(role1);
-    			roleManeger.Create(role2);
-    			roleManeger.Create(role3);
-    	
-    			base.Seed(context);
-    }
-}
+	
     public class DbInitialzer:DropCreateDatabaseAlways<UniversityContext>
     {
         protected  override void Seed (UniversityContext context){
@@ -241,38 +227,38 @@ namespace StudentMonitoringSystem.Models
 			context.Faculty.Add(fac);
 			context.Group.Add(gr);
 			
-				conext.Student.Add(st1);
-				conext.Student.Add(st2);
-				conext.Student.Add(st3);
-				conext.Student.Add(st4);
-				conext.Student.Add(st5);
-				conext.Student.Add(st6);
-				conext.Student.Add(st7);
-				conext.Student.Add(st8);
-				conext.Student.Add(st9);
-				conext.Student.Add(st10);	
-				conext.Student.Add(st11);
-				conext.Student.Add(st12);
-				conext.Student.Add(st13);
-				conext.Student.Add(st14);
-				conext.Student.Add(st15);	
-				conext.Student.Add(st16);
-				conext.Student.Add(st17);
-				conext.Student.Add(st18);
-				conext.Student.Add(st19);
-				conext.Student.Add(st20);
+				context.Student.Add(st1);
+				context.Student.Add(st2);
+				context.Student.Add(st3);
+				context.Student.Add(st4);
+				context.Student.Add(st5);
+				context.Student.Add(st6);
+				context.Student.Add(st7);
+				context.Student.Add(st8);
+				context.Student.Add(st9);
+				context.Student.Add(st10);	
+				context.Student.Add(st11);
+				context.Student.Add(st12);
+				context.Student.Add(st13);
+				context.Student.Add(st14);
+				context.Student.Add(st15);	
+				context.Student.Add(st16);
+				context.Student.Add(st17);
+				context.Student.Add(st18);
+				context.Student.Add(st19);
+				context.Student.Add(st20);
 				
-				conext.Lector.Add(l1);
-				conext.Lector.Add(l2);
-				conext.Lector.Add(l3);
-				conext.Lector.Add(l4);
+				context.Lector.Add(l1);
+				context.Lector.Add(l2);
+				context.Lector.Add(l3);
+				context.Lector.Add(l4);
 				
-				conext.Subject.Add(s1);
-				conext.Subject.Add(s2);
-				conext.Subject.Add(s3);
-				conext.Subject.Add(s4);
-				conext.Subject.Add(s5);
-				conext.Subject.Add(s6);
+				context.Subject.Add(s1);
+				context.Subject.Add(s2);
+				context.Subject.Add(s3);
+				context.Subject.Add(s4);
+				context.Subject.Add(s5);
+				context.Subject.Add(s6);
 				
 				context.MarkPoint.Add(mp1);
 				context.MarkPoint.Add(mp2);
