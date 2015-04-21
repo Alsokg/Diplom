@@ -12,6 +12,17 @@
 
             <tr>
                 <th>@item.Name</th>
+                @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
+                {
+                <th>@point.Name</th>
+                }
+            </tr>
+            <tr>
+            <th></th>
+            @foreach (var mark in ViewData["Marks"] as ICollection<StudentMonitoreingSystem.Models.Mark>)
+            {
+            <td>@mark.Value</td>
+            }
             </tr>
 
         }
