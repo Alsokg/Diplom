@@ -45,8 +45,10 @@ namespace StudentMonitoringSystem.Controllers
                 var subjectsList = s.Subjects.ToList();
                 ViewData["Subjects"] = s.Subjects;
                
-               var data = db.Marks.Where(m => m.StudentId == s.Id).ToList();
-                        
+               var data = s.Mark;
+               foreach ( var sub in s.Subject){
+                   ViewData["Marks"+sub.Id] = s.Mark.Where(m=>m.MarkPointId == sub.MarkPointId);
+               }         
                 ViewData["Marks"] = data;
                 
                 
