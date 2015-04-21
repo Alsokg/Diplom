@@ -45,8 +45,9 @@ namespace StudentMonitoringSystem.Controllers
                 var subjectsList = s.Subjects.ToList();
                 ViewData["Subjects"] = s.Subjects;
                
-               
-                ViewData["Marks"] = s.Marks;
+               var data = db.Marks.Where(m => m.StudentId == s.Id).ToList();
+                        
+                ViewData["Marks"] = data;
                 
                 
             }
