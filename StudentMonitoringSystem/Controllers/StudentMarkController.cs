@@ -27,18 +27,18 @@ namespace StudentMonitoringSystem.Controllers
             var current = manager.FindById(User.Identity.GetUserId());
 
             bool flag = false;
-            int? IdfromDB = null;
+           
             var s = new Student();
             foreach(Student ss in db.Student){
                 if (ss.StudentBookNumber == current.StydentBookNumber)
                 {
                     flag = true;
-                    IdfromDB = s.Id;
+                  
                     s = ss;
                    
                 }
             }
-            if (IdfromDB != null)
+            if (flag != false)
             {
                 String  fullName= s.Name + "   " + s.SurName;
                 ViewData["StudentFullName"] = fullName;
