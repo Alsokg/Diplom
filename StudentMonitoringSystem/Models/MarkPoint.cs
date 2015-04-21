@@ -28,7 +28,7 @@ namespace StudentMonitoringSystem.Models
         public DateTime Date { get; set; }*/
         public virtual Subject Subject { get; set; }
 
-        public virtual ICollection<Mark> Marks { get; set; }
+        public  ICollection<Mark> Marks { get; set; }
 
     }
 }

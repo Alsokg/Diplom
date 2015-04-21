@@ -46,6 +46,34 @@ namespace StudentMonitoringSystem.Migrations
                 .Index(t => t.GroupId);
             
             CreateTable(
+                "dbo.Marks",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Value = c.Double(nullable: false),
+                        MarkPointId = c.Int(),
+                        StudentId = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.MarkPoints", t => t.MarkPointId)
+                .ForeignKey("dbo.Students", t => t.StudentId)
+                .Index(t => t.MarkPointId)
+                .Index(t => t.StudentId);
+            
+            CreateTable(
+                "dbo.MarkPoints",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        SubjectId = c.Int(),
+                        maxValue = c.Double(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Subjects", t => t.SubjectId)
+                .Index(t => t.SubjectId);
+            
+            CreateTable(
                 "dbo.Subjects",
                 c => new
                     {
@@ -64,34 +92,6 @@ namespace StudentMonitoringSystem.Migrations
                         Grade = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.MarkPoints",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
-                        SubjectId = c.Int(),
-                        maxValue = c.Double(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Subjects", t => t.SubjectId)
-                .Index(t => t.SubjectId);
-            
-            CreateTable(
-                "dbo.Marks",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Value = c.Double(nullable: false),
-                        MarkPointId = c.Int(),
-                        StudentId = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.MarkPoints", t => t.MarkPointId)
-                .ForeignKey("dbo.Students", t => t.StudentId)
-                .Index(t => t.MarkPointId)
-                .Index(t => t.StudentId);
             
             CreateTable(
                 "dbo.Universities",
@@ -134,32 +134,32 @@ namespace StudentMonitoringSystem.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Faculties", "UniversityId", "dbo.Universities");
+            DropForeignKey("dbo.Marks", "StudentId", "dbo.Students");
             DropForeignKey("dbo.SubjectStudents", "Student_Id", "dbo.Students");
             DropForeignKey("dbo.SubjectStudents", "Subject_Id", "dbo.Subjects");
             DropForeignKey("dbo.MarkPoints", "SubjectId", "dbo.Subjects");
-            DropForeignKey("dbo.Marks", "StudentId", "dbo.Students");
-            DropForeignKey("dbo.Marks", "MarkPointId", "dbo.MarkPoints");
             DropForeignKey("dbo.LectorSubjects", "Subject_Id", "dbo.Subjects");
             DropForeignKey("dbo.LectorSubjects", "Lector_Id", "dbo.Lectors");
+            DropForeignKey("dbo.Marks", "MarkPointId", "dbo.MarkPoints");
             DropForeignKey("dbo.Students", "GroupId", "dbo.Groups");
             DropForeignKey("dbo.Groups", "FacultyId", "dbo.Faculties");
             DropIndex("dbo.SubjectStudents", new[] { "Student_Id" });
             DropIndex("dbo.SubjectStudents", new[] { "Subject_Id" });
             DropIndex("dbo.LectorSubjects", new[] { "Subject_Id" });
             DropIndex("dbo.LectorSubjects", new[] { "Lector_Id" });
+            DropIndex("dbo.MarkPoints", new[] { "SubjectId" });
             DropIndex("dbo.Marks", new[] { "StudentId" });
             DropIndex("dbo.Marks", new[] { "MarkPointId" });
-            DropIndex("dbo.MarkPoints", new[] { "SubjectId" });
             DropIndex("dbo.Students", new[] { "GroupId" });
             DropIndex("dbo.Groups", new[] { "FacultyId" });
             DropIndex("dbo.Faculties", new[] { "UniversityId" });
             DropTable("dbo.SubjectStudents");
             DropTable("dbo.LectorSubjects");
             DropTable("dbo.Universities");
-            DropTable("dbo.Marks");
-            DropTable("dbo.MarkPoints");
             DropTable("dbo.Lectors");
             DropTable("dbo.Subjects");
+            DropTable("dbo.MarkPoints");
+            DropTable("dbo.Marks");
             DropTable("dbo.Students");
             DropTable("dbo.Groups");
             DropTable("dbo.Faculties");

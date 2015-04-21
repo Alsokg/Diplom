@@ -18,7 +18,7 @@ namespace StudentMonitoringSystem.Models
 			
 				Group gr = new Group {Id = 1, Name = "System analysis 42", FacultyId = 1, Faculty = fac };
 
-                Student st1 = new Student { Id = 1, Name = "Andriy", SurName = "Buy", GroupId = 1, StudentBookNumber ="12121212"};
+                Student st1 = new Student { Id = 1, Name = "Andriy", SurName = "Buy", GroupId = 1, StudentBookNumber = "12121212" };
                 Student st2 = new Student { Id = 2, Name = "Andriy", SurName = "Vercimaga", GroupId = 1, StudentBookNumber = "11111113" };
                 Student st3 = new Student { Id = 3, Name = "Andriy", SurName = "Vengrunovuch", GroupId = 1, StudentBookNumber = "11111114" };
                 Student st4 = new Student { Id = 4, Name = "Taras", SurName = "Viter", GroupId = 1, StudentBookNumber = "11111115" };
@@ -222,6 +222,10 @@ namespace StudentMonitoringSystem.Models
 					Mark m663 = new Mark {Id = 109, Value =15 , MarkPointId = 35, StudentId = 3};
 					Mark m673 = new Mark {Id = 110, Value =5 , MarkPointId = 36, StudentId = 3};
 					Mark m683 = new Mark {Id = 111, Value =15 , MarkPointId = 37, StudentId = 3};
+
+                    st1.setMark(new List<Mark>() { m11, m21, m31, m41, m51, m211, m221, m231, m311, m321, m331, m341, m351, m361, m371, m381, m391, m3101, m3111,
+                                                    m411, m421, m431, m441, m451, m461, m511, m521, m531, m541, m611, m621, m631, m641, m651, m661, m671, m681});
+                    st2.setMark(new List<Mark>() { m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682 });
 					
 			context.University.Add(univ);
 			context.Faculty.Add(fac);

@@ -1,31 +1,28 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
-
 <h2>Individual Table</h2>
+<style>
+    td{
+        word-break:break-all;
+        width:70px;
+        padding:6px;
+    }
+</style>
 <div>
     <h4>@ViewData["StudentFullName"]</h4>
     <table>
         @foreach (var item in ViewData["Subjects"] as ICollection<StudentMonitoringSystem.Models.Subject>)
         {
-
             <tr>
                 <th>@item.Name</th>
                 @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
                 {
-                <th>@point.Name <br />
-                @point.MaxValue</th>
+                <td>@point.Name <br />
+                       @point.Marks.First().Value</td>           
+                    
                 }
             </tr>
-            <tr>
-            <th></th>
-            @foreach (var mark in ViewData["Marks"] as ICollection<StudentMonitoreingSystem.Models.Mark>)
-            {
-            <td>@mark.Value</td>
-            }
-            </tr>
-
         }
     </table>
 </div>

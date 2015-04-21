@@ -25,6 +25,8 @@ namespace StudentMonitoringSystem.Models
         public virtual Group Group { get; set; }
 
         public virtual ICollection<Subject> Subjects { get; set; }
-
+        public void setMark(List<Mark> list){
+            Marks = list;
+        }
     }
 }

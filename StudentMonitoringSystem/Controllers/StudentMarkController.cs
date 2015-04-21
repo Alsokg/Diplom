@@ -33,7 +33,6 @@ namespace StudentMonitoringSystem.Controllers
                 if (ss.StudentBookNumber == current.StydentBookNumber)
                 {
                     flag = true;
-                  
                     s = ss;
                    
                 }
@@ -45,10 +44,8 @@ namespace StudentMonitoringSystem.Controllers
                 var subjectsList = s.Subjects.ToList();
                 ViewData["Subjects"] = s.Subjects;
                
-               var data = s.Mark;
-               foreach ( var sub in s.Subject){
-                   ViewData["Marks"+sub.Id] = s.Mark.Where(m=>m.MarkPointId == sub.MarkPointId);
-               }         
+               var data = s.Marks;
+               
                 ViewData["Marks"] = data;
                 
                 
