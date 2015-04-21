@@ -14,7 +14,8 @@
                 <th>@item.Name</th>
                 @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
                 {
-                <th>@point.Name</th>
+                <th>@point.Name <br />
+                @point.MaxValue</th>
                 }
             </tr>
             <tr>
