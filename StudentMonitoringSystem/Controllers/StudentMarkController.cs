@@ -44,7 +44,10 @@ namespace StudentMonitoringSystem.Controllers
                 ViewData["StudentFullName"] = fullName;
                 var subjectsList = s.Subjects.ToList();
                 ViewData["Subjects"] = s.Subjects;
+               
+               
                 ViewData["Marks"] = s.Marks;
+                
                 
             }
             
