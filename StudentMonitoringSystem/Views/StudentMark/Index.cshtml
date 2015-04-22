@@ -19,8 +19,9 @@
                 @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
                 {
                 <td>@point.Name <br />
-                       @point.Marks.First().Value</td>           
-                    
+                       @point.Marks.First().Value</td>  //wrong, this take 1st mark from all, we need with specifical student ID         
+                    //need add null exeption
+                    // check student id
                 }
             </tr>
         }
