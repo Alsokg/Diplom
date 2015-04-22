@@ -11,15 +11,15 @@
 </style>
 <div>
     <h4>@ViewData["StudentFullName"]</h4>
-    <table>
+    <table class="table">
         @foreach (var item in ViewData["Subjects"] as ICollection<StudentMonitoringSystem.Models.Subject>)
         {
             <tr>
                 <th>@item.Name</th>
                 @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
                 {
-                <td>@point.Name <br />
-                       @point.Marks.First().Value</td>  //wrong, this take 1st mark from all, we need with specifical student ID         
+                <div style ="display:inline">@point.Name <br />
+                       @point.Marks.First().Value</div>  //wrong, this take 1st mark from all, we need with specifical student ID         
                     //need add null exeption
                     // check student id
                 }
