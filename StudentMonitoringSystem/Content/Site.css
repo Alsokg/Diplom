@@ -22,3 +22,33 @@ select,
 textarea {
     max-width: 280px;
 }
+.m-11 {
+  color:#b70000;
+}
+.m-21 {
+  color:#c03f00;
+}
+.m-31 {
+  color:#d16c00;
+}
+.m-41 {
+  color:#ff9600;
+}
+.m-51 {
+  color:#636363;
+}
+.m-61 {
+  color:#1ad801;
+}
+.m-71 {
+  color:#01ae36;
+}
+.m-81 {
+  color:#008513;
+}
+.m-91 {
+  color:#005e1b;
+}
+.m-100 {
+  color:#2041cf;
+}
