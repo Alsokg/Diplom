@@ -1,0 +1,27 @@
+public class InfoParser{
+		private double currValue;
+		private double maxValue = 100;
+		private double maxCurrValue;
+		private double [] arrayOfMax;
+		private double [] arrayOfCurrent;
+		private double k = 100;
+		
+		public double translate(){
+			return currValue/maxValue*k;
+		}
+		public double translate(double Value){
+			return Value/maxValue*k;
+		}
+		public double maxPredictReal( ){
+			return currValue + (maxValue - maxCurrValue);
+		}
+		public double maxPredictPerc( ){
+			return maxPredictReal()/maxValue*k ;
+		}
+		public double midPredictPerc(){
+			return translate()/k*(maxValue - maxCurrValue)+currValue;
+		}
+		public double minPredictPerc(){
+			return currValue;
+		}
+	}
