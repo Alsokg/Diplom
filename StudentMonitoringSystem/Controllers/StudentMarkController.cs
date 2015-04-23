@@ -65,5 +65,14 @@ namespace StudentMonitoringSystem.Controllers
             }
             return View(group);
         }
+        
+        [Authorized (Role = "Lector")]
+        public Group(){
+            return View(db.Groups);
+        }
+        [Authorized (Role = "Lector")]
+        public Faculty(){
+            return View(db.Faculty);
+        }
     }
 }
