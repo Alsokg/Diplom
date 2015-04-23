@@ -29,13 +29,20 @@ namespace StudentMonitoringSystem.Models
             var stud = new ApplicationUser { Email = "qwert@gmail.com", UserName = "qwert@gmail.com", StydentBookNumber = "12121212" };
             string password = "123qweRT_";
             var result = userManager.Create(stud, password);
+            var lector = new ApplicationUser { Email = "lector@gmail.com", UserName = "lector@gmail.com", isLector = true };
+            
+            var result2 = userManager.Create(lector, password);
 
             // если создание пользователя прошло успешно
             if (result.Succeeded)
             {
                 // добавляем для пользователя роль
                 userManager.AddToRole(stud.Id, role2.Name);
-                
+            }
+            if (result2.Succeeded)
+            {
+                // добавляем для пользователя роль
+                userManager.AddToRole(lector.Id, role3.Name);
             }
             
             base.Seed(context);
