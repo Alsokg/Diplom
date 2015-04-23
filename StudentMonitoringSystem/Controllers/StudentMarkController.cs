@@ -17,7 +17,7 @@ namespace StudentMonitoringSystem.Controllers
         private UniversityContext db = new UniversityContext();
         
         // GET: StudentMark
-        [Authorize(Roles = "Student", Roles = "Lector")]
+        [Authorize(Roles = "Student, Lector")]
         public ActionResult Index()
         {
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
@@ -54,7 +54,7 @@ namespace StudentMonitoringSystem.Controllers
         }
         }
         
-        [Authorized (Role = "Lector")]
+        [Authorize (Roles = "Lector")]
         public Details(int? id){
             if(id == null){
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -66,7 +66,7 @@ namespace StudentMonitoringSystem.Controllers
             return View(group);
         }
         
-        [Authorized (Role = "Lector")]
+        [Authorize (Roles = "Lector")]
         public Group(){
             return View(db.Groups);
         }
