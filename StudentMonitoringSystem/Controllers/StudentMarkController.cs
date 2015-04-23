@@ -41,18 +41,29 @@ namespace StudentMonitoringSystem.Controllers
                 String  fullName= s.Name + "   " + s.SurName;
                 ViewData["StudentFullName"] = fullName;
                 ViewData["Student"] = s;
-                var subjectsList = s.Subjects.ToList();
                 ViewData["Subjects"] = s.Subjects;
              
             }
             
             return View();
         }
-        }
         else
         {
-            ViewData["allSubjects"] = db.Subjects;
-            ViewData["allGroups"] = db.Groups;
+            ViewData["Groups"] = db.Groups;
+            return View("Groups")
+        }
+        }
+        
+        [Authorized (Role = "Lector")]
+        public Details(int? id){
+            if(id == null){
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var group = db.Groups.Find(id);
+            if (group == null){
+                HttpNotFound();
+            }
+            return View(group);
         }
     }
 }
