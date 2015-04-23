@@ -17,15 +17,15 @@ namespace StudentMonitoringSystem.Controllers
         private UniversityContext db = new UniversityContext();
         
         // GET: StudentMark
-        [Authorize(Roles = "Student")]
+        [Authorize(Roles = "Student", Roles = "Lector")]
         public ActionResult Index()
         {
-
-
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
 
             var current = manager.FindById(User.Identity.GetUserId());
-
+            bool isStudent = UserManager.IsInRole(current.Id, "Student");
+            if (isStudent)
+            {
             bool flag = false;
            
             var s = new Student();
@@ -34,7 +34,6 @@ namespace StudentMonitoringSystem.Controllers
                 {
                     flag = true;
                     s = ss;
-                   
                 }
             }
             if (flag != false)
@@ -44,15 +43,16 @@ namespace StudentMonitoringSystem.Controllers
                 ViewData["Student"] = s;
                 var subjectsList = s.Subjects.ToList();
                 ViewData["Subjects"] = s.Subjects;
-               
-               var data = s.Marks;
-               
-                ViewData["Marks"] = data;
-                
-                
+             
             }
             
             return View();
+        }
+        }
+        else
+        {
+            ViewData["allSubjects"] = db.Subjects;
+            ViewData["allGroups"] = db.Groups;
         }
     }
 }
