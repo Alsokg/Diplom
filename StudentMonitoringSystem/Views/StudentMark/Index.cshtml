@@ -8,23 +8,33 @@
         width:70px;
         padding:6px;
     }
+    .fluid-box{
+        display:inline-block;
+        border:1px solid gray;
+    }
+    .Mark{
+        font-size:20px;
+        display:block;
+        text-align:center;
+    }
+    .mark-point-maxValue{
+        color:gray;
+    }
+    .subName{
+        font-size:24px;
+    }
 </style>
 <div>
     <h4>@ViewData["StudentFullName"]</h4>
-    <table class="table">
+    <div class="table">
         @foreach (var item in ViewData["Subjects"] as ICollection<StudentMonitoringSystem.Models.Subject>)
         {
-            <tr>
-                <th>@item.Name</th>
-                @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
-                {
-                <div style ="display:inline">@point.Name <br />
-                       @point.Marks.First().Value</div>  //wrong, this take 1st mark from all, we need with specifical student ID         
-                    //need add null exeption
-                    // check student id
-                }
-            </tr>
+            
+                <div class="subName">@item.Name</div>
+    <div>
+        @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>){<div class="fluid-box"><span class="mark-point-name">@point.Name</span> <span class="mark-point-maxValue">(@point.maxValue)</span> <br /><span class="Mark">@point.Marks.First().Value</span></div>}
+    </div>
         }
-    </table>
+    </div>
 </div>
 
