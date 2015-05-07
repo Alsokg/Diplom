@@ -3,38 +3,87 @@
 }
 <h2>Individual Table</h2>
 <style>
-    td{
-        word-break:break-all;
-        width:70px;
-        padding:6px;
-    }
+    
     .fluid-box{
         display:inline-block;
         border:1px solid gray;
+        vertical-align:top;
+        text-align:center;
+       
+    }
+    .table{
+        width:100%;
     }
     .Mark{
-        font-size:20px;
+        font-size:16px;
         display:block;
         text-align:center;
     }
     .mark-point-maxValue{
         color:gray;
+        display:inline;
+    }
+   
+    th,td{
+        font-size:12px;
+        border:1px solid #dddddd;
+        text-align:center;
+        padding:6px !important;
+    }
+    th{
+        border-bottom:3px solid #1BA81D;
     }
     .subName{
+        width:80%;
+        margin-left:10px;
+        text-align:left;
+
         font-size:24px;
+
+    }
+    .table-c{
+        overflow:auto;
     }
 </style>
-<div>
-    <h4>@ViewData["StudentFullName"]</h4>
-    <div class="table">
+<div class="table">
+    <div class="col-md-6 col-lg-6 col col-xs-12">
+        <h4>@ViewData["StudentFullName"]</h4>
+    </div>
+    <div class="col-md-6 col-lg-6 col col-xs-12">
+        <div class="btn btn-info">
+             @Html.ActionLink("Chart", "Chart")
+        </div> 
+        
+        <div class="btn btn-success">
+            @Html.ActionLink("Progress", "Progress")
+        </div>
+        </div>
+   <div class="clearfix"></div>
         @foreach (var item in ViewData["Subjects"] as ICollection<StudentMonitoringSystem.Models.Subject>)
         {
-            
-                <div class="subName">@item.Name</div>
-    <div>
-        @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>){<div class="fluid-box"><span class="mark-point-name">@point.Name</span> <span class="mark-point-maxValue">(@point.maxValue)</span> <br /><span class="Mark">@point.Marks.First().Value</span></div>}
-    </div>
+            <div class="table-c">
+                <div class="subName"><span>@item.Name</span></div><table class="table">
+                    <tr>
+                        @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
+                        {
+
+                            <th>@point.Name <p class="mark-point-maxValue">(@point.maxValue)</p></th>
+
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var point in item.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
+                        {
+
+                            <td>@point.Marks.First().Value</td>
+
+                        }
+                    </tr>
+                </table>
+            </div>
+                        <div class="clearfix"></div>
+                
         }
-    </div>
+            
 </div>
 

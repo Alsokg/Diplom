@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "Chart";
+}
+<style type="text/css">
+    #myChart {
+        width: 100%;
+        max-width: 100%;
+        min-width: 600px;
+        max-height: 400px;
+    }
+
+    .scroll {
+        overflow: auto;
+    }
+
+    .donut-inner {
+        margin-top: -250px;
+        text-align: center;
+        width: 250px;
+        height: 250px;
+    }
+
+    .dot {
+        display: inline;
+        float: left;
+        padding: 16px;
+    }
+
+    .donut-inner p {
+        line-height: 240px;
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+        font-size: 40px;
+    }
+
+    .subName {
+        text-align: center;
+        width: 250px;
+    }
+
+        .subName p {
+            font-size: 20px;
+        }
+</style>
+
+
+
+<h2>Chart of current and top results of @ViewData["StudentFullName"]</h2>
+<div class="scroll">
+    <canvas id="myChart" height="300"></canvas>
+</div>
+<h2>Current progress:</h2>
+@{
+    var i = 0;
+}
+
+@foreach (var subject in ViewData["Subjects"] as ICollection<StudentMonitoringSystem.Models.Subject>)
+{
+    <div class="dot">
+        @{
+    var idName = "myChartDou" + i;
+    var idPoint = "point" + i;
+    i++; 
+        }
+        <canvas id=@idName height="250" width="250"></canvas>
+        <div>
+            <div class="donut-inner">
+                <p><span id=@idPoint>0</span></p>
+            </div>
+            <div class="subName">
+                <p>@subject.Name</p>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="clearfix"></div>
+<script>
+    var colors = ['#ff0000', '#ffa900', '#fef000', '#fcf000', '#faf000', '#f8f000', '#f6f000', '#f2f000',
+					'#eff000', '#edf000', '#eaf000', '#e7f000', '#e4f000', '#e1f000',
+					'#def000', '#dbf000', '#d8f000', '#d4f000', '#d1f000',
+					'#cdf000', '#caf000', '#c6f000', '#c3f000',
+					'#bff000', '#bbf000', '#b7f000', '#b3f000', '#b3f000',
+					'#afee00', '#aced00', '#a8ec00', '#a4eb00',
+					'#a0ea00', '#9ce900', '#97e700', '#93e600', '#93e600',
+					'#8fe500', '#8be300', '#87e200', '#83e000', '#7fdf00',
+					'#7bde00', '#77dc00', '#72db00', '#6ed900', '#6ad800',
+					'#66d600', '#62d500', '#5ed300', '#5ad200']
+
+    var col = null;
+    function color (val){
+        if (val < 51)
+            return colors[0];
+        else
+            return colors[val - 50];
+    };
+    var subjects = new Array();
+    var dataReal = new Array();
+    var dataMax = new Array();
+    var datadot = new Array();
+    var ctxArray = new Array();
+    var index = 0;
+    var dot;
+    @foreach (var subject in ViewData["Subjects"] as ICollection<StudentMonitoringSystem.Models.Subject>)
+    {
+           @:subjects.push("@subject.Name");
+                                     var current = .0;
+                        var currentMax = .0;
+
+                        foreach (var point in subject.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
+                        {
+                               current += point.Marks.First().Value;
+                               currentMax += point.maxValue;
+                        }
+                          @:dataReal.push("@current");
+                                          @:dataMax.push("@currentMax");
+
+                @:datadot.push([{ value: @current, color: color(@current), highlight: color(@current), label: "Your success" }, { value: 100 - @current, color: 'silver', highlight: "silver", label: "" }]);
+
+        @:ctxArray.push(document.getElementById("myChartDou" +index).getContext("2d"));
+        @:drowDot(datadot[index],ctxArray[index]);
+        @:dotVal(@current,document.getElementById("point" +index).getContext("2d"));
+        @:index++;
+            }
+
+    var data = {
+        labels: subjects,
+        datasets: [
+            {
+                label: "Current",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: dataReal
+            }
+
+        ]
+    };
+
+
+    var obj = $('#subject');
+    function dotVal(val, obj) {
+        var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
+        obj.animateNumber(
+      {
+          number: val,
+          easing: 'easeInQuad',
+
+          numberStep: percent_number_step
+      },
+      2000
+    );
+    }
+
+    var ctx = document.getElementById("myChart").getContext("2d");
+    function drowBar(data, canvas) {
+        new Chart(canvas).Bar(data);
+    }
+    function drowDot(data, canvas) {
+
+        new Chart(canvas).Doughnut(data, {
+            animateScale: true,
+            segmentShowStroke: false
+
+        });
+    }
+
+    drowBar(data, ctx);
+    
+
+
+</script>
+
