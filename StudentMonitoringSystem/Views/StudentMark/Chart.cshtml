@@ -121,7 +121,7 @@
 
         @:ctxArray.push(document.getElementById("myChartDou" +index).getContext("2d"));
         @:drowDot(datadot[index],ctxArray[index]);
-        @:dotVal(@current,document.getElementById("point" +index).getContext("2d"));
+        @:dotVal(@current,$("#point" +index));
         @:index++;
             }
 
