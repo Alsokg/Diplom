@@ -62,7 +62,7 @@ namespace StudentMonitoringSystem.Controllers
             }
         }
         // GET: StudentMark
-        [Authorize(Roles = "Student, Lector")]
+        [Authorize(Roles = "Student")]
         public ActionResult Index()
         {
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
