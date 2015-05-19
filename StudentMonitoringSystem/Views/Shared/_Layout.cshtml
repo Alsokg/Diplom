@@ -27,6 +27,27 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Marks", "Marks", "Home")</li>
+                    @if ( User.Identity.IsAuthenticated ){
+                                 if ( User.IsInRole("Student") ){
+                                     <li>
+                                    @Html.ActionLink("Marks", "StudentMark") 
+                                    </li>
+                                    <li>
+                                    @Html.ActionLink("Diagram", "Chart") 
+                                    </li>
+                                    }
+                                }
+                                @if ( User.Identity.IsAuthenticated ){
+                                 if ( User.IsInRole("Lector") ){
+                                     <li>
+                                    @Html.ActionLink("Subjects", "SubjectsList") 
+                                    </li>
+                                    <li>
+                                    @Html.ActionLink("Groups", "GroupsList") 
+                                    </li>
+                                    }
+                                }
+                                
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
