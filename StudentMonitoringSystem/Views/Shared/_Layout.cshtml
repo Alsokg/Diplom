@@ -30,20 +30,20 @@
                     @if ( User.Identity.IsAuthenticated ){
                                  if ( User.IsInRole("Student") ){
                                      <li>
-                                    @Html.ActionLink("Marks", "StudentMark") 
+                                    @Html.ActionLink("Marks", "StudentMark", "Index") 
                                     </li>
                                     <li>
-                                    @Html.ActionLink("Diagram", "Chart") 
+                                    @Html.ActionLink("Diagram", "StudentMark", "Chart") 
                                     </li>
                                     }
                                 }
                                 @if ( User.Identity.IsAuthenticated ){
                                  if ( User.IsInRole("Lector") ){
                                      <li>
-                                    @Html.ActionLink("Subjects", "SubjectsList") 
+                                    @Html.ActionLink("Subjects", "Lector", "SubjectsList") 
                                     </li>
                                     <li>
-                                    @Html.ActionLink("Groups", "GroupsList") 
+                                    @Html.ActionLink("Groups", "Lector", "GroupsList") 
                                     </li>
                                     }
                                 }
