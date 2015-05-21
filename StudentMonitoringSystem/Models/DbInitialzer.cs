@@ -49,7 +49,7 @@ namespace StudentMonitoringSystem.Models
 					Lector l1 = new Lector {Id = 1, Name = "Andiy", SurName = "Korkyna", Grade = "Aspirant", Subjects = new List<Subject>() {s1, s2}};
 					Lector l2 = new Lector {Id = 2, Name = "Lesya", SurName = "Fundak", Grade = "Docent", Subjects = new List<Subject>() {s1, s6}};
 					Lector l3 = new Lector {Id = 3, Name = "Frodo", SurName = "Torbins", Grade = "Hobbit", Subjects = new List<Subject>() {s4}};
-					Lector l4 = new Lector {Id = 4, Name = "Lesya", SurName = "Dobulyak", Grade = "Docent", Subjects = new List<Subject>() {s3,s5}};
+					Lector l4 = new Lector {Id = 4, Name = "Lesya", SurName = "dobylyak@gmail.com", Grade = "Docent", Subjects = new List<Subject>() {s3,s5}};
 					
 					MarkPoint mp1 = new MarkPoint {Id = 1, Name = "Module1", maxValue = 10, SubjectId = 1 };
 					MarkPoint mp2 = new MarkPoint {Id = 2, Name = "Module2", maxValue = 10, SubjectId = 1  };

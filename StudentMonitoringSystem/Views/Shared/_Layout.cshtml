@@ -26,24 +26,24 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Marks", "Marks", "Home")</li>
+                    
                     @if ( User.Identity.IsAuthenticated ){
                                  if ( User.IsInRole("Student") ){
                                      <li>
-                                    @Html.ActionLink("Marks", "StudentMark", "Index") 
+                                    @Html.ActionLink("Marks", "Index", "StudentMark") 
                                     </li>
                                     <li>
-                                    @Html.ActionLink("Diagram", "StudentMark", "Chart") 
+                                    @Html.ActionLink("Diagram", "Chart", "StudentMark") 
                                     </li>
                                     }
                                 }
                                 @if ( User.Identity.IsAuthenticated ){
                                  if ( User.IsInRole("Lector") ){
                                      <li>
-                                    @Html.ActionLink("Subjects", "Lector", "SubjectsList") 
+                                    @Html.ActionLink("Subjects", "Index", "Lector") 
                                     </li>
                                     <li>
-                                    @Html.ActionLink("Groups", "Lector", "GroupsList") 
+                                    @Html.ActionLink("Groups", "GroupsList", "Lector") 
                                     </li>
                                     }
                                 }
