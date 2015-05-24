@@ -8,137 +8,122 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StudentMonitoringSystem.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace StudentMonitoringSystem.Controllers
 {
-   [Authorize(Roles="Lector")]
-    public class LectorController : Controller
+    [Authorize(Roles="Lector")]
+    public class InfoGroupController : Controller
     {
         private UniversityContext db = new UniversityContext();
 
-        private Lector findLector()
-        {
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
-
-            var current = manager.FindById(User.Identity.GetUserId());
-            {
-
-                var l = new Lector();
-                foreach (Lector ll in db.Lector)
-                {
-
-                    if (ll.SurName == current.UserName)
-                    {
-
-                        l = ll;
-                        return l;
-                    }
-                }
-            }
-            return null;
-        }
-   
-        // GET: Lector
+        // GET: InfoGroup
         public ActionResult Index()
         {
-            var lector = findLector();
-            return View(lector.Subjects);
+            var group = db.Group.Include(g => g.Faculty).Include(s => s.Students);
+            ViewData["Students"] = db.Student;
+            ViewData["Marks"] = db.MarkPoint;
+            ViewData["Subjects"] = db.Subject;
+            return View(group.ToList());
         }
 
-        // GET: Lector/Details/5
-        public async Task<ActionResult> Details(int? id)
+        // GET: InfoGroup/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Subject subject = await db.Subject.FindAsync(id);
-            ViewBag.Group = await db.Group.ToListAsync();
-            if (subject == null)
+            Group group = db.Group.Find(id);
+            if (group == null)
             {
                 return HttpNotFound();
             }
-            return View(subject);
+            ViewData["Students"] =  db.Student;
+            ViewData["Marks"] =  db.MarkPoint;
+            ViewData["Subjects"] =  db.Subject;
+            return View(group);
         }
 
-        // GET: Lector/Create
+        // GET: InfoGroup/Create
         public ActionResult Create()
         {
+            ViewBag.FacultyId = new SelectList(db.Faculty, "Id", "Name");
             return View();
         }
 
-        // POST: Lector/Create
+        // POST: InfoGroup/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name")] Subject subject)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Name,FacultyId")] Group group)
         {
             if (ModelState.IsValid)
             {
-                db.Subject.Add(subject);
+                db.Group.Add(group);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(subject);
+            ViewBag.FacultyId = new SelectList(db.Faculty, "Id", "Name", group.FacultyId);
+            return View(group);
         }
 
-        // GET: Lector/Edit/5
+        // GET: InfoGroup/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Subject subject = await db.Subject.FindAsync(id);
-            if (subject == null)
+            Group group = await db.Group.FindAsync(id);
+            if (group == null)
             {
                 return HttpNotFound();
             }
-            return View(subject);
+            ViewBag.FacultyId = new SelectList(db.Faculty, "Id", "Name", group.FacultyId);
+            return View(group);
         }
 
-        // POST: Lector/Edit/5
+        // POST: InfoGroup/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name")] Subject subject)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,FacultyId")] Group group)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(subject).State = EntityState.Modified;
+                db.Entry(group).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(subject);
+            ViewBag.FacultyId = new SelectList(db.Faculty, "Id", "Name", group.FacultyId);
+            return View(group);
         }
 
-        // GET: Lector/Delete/5
+        // GET: InfoGroup/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Subject subject = await db.Subject.FindAsync(id);
-            if (subject == null)
+            Group group = await db.Group.FindAsync(id);
+            if (group == null)
             {
                 return HttpNotFound();
             }
-            return View(subject);
+            return View(group);
         }
 
-        // POST: Lector/Delete/5
+        // POST: InfoGroup/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Subject subject = await db.Subject.FindAsync(id);
-            db.Subject.Remove(subject);
+            Group group = await db.Group.FindAsync(id);
+            db.Group.Remove(group);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

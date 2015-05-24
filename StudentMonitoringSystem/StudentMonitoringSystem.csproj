@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InfoGroupController.cs" />
     <Compile Include="Controllers\LectorController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarksController.cs" />
@@ -262,6 +263,11 @@
     <Content Include="Views\Lector\Details.cshtml" />
     <Content Include="Views\Lector\Edit.cshtml" />
     <Content Include="Views\Lector\Index.cshtml" />
+    <Content Include="Views\InfoGroup\Create.cshtml" />
+    <Content Include="Views\InfoGroup\Delete.cshtml" />
+    <Content Include="Views\InfoGroup\Details.cshtml" />
+    <Content Include="Views\InfoGroup\Edit.cshtml" />
+    <Content Include="Views\InfoGroup\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,4 @@
-﻿@model StudentMonitoringSystem.Models.Subject
+﻿@model StudentMonitoringSystem.Models.Group
 
 @{
     ViewBag.Title = "Details";
@@ -7,9 +7,17 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Subject</h4>
+    <h4>Group</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Faculty.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faculty.Name)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -21,11 +29,6 @@
     </dl>
 </div>
 <p>
-    <p>Group Name</p>
-@foreach (var g in ViewBag.Group)
-{
-    <p>@g.Name | @Html.ActionLink("Group Info", "~/Views/InfoGroup/Index", new { id = Model.Id })</p>
-}
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
