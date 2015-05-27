@@ -21,7 +21,7 @@ namespace StudentMonitoringSystem.Models
                 Student st1 = new Student { Id = 1, Name = "Andriy", SurName = "Buy", GroupId = 1, StudentBookNumber = "12121212" };
                 Student st2 = new Student { Id = 2, Name = "Andriy", SurName = "Vercimaga", GroupId = 1, StudentBookNumber = "11111113" };
                 Student st3 = new Student { Id = 3, Name = "Andriy", SurName = "Vengrunovuch", GroupId = 1, StudentBookNumber = "11111114" };
-                Student st4 = new Student { Id = 4, Name = "Taras", SurName = "Viter", GroupId = 1, StudentBookNumber = "11111115" };
+               /* Student st4 = new Student { Id = 4, Name = "Taras", SurName = "Viter", GroupId = 1, StudentBookNumber = "11111115" };
                 Student st5 = new Student { Id = 5, Name = "Rostuslav", SurName = "Dembickuy", GroupId = 1, StudentBookNumber = "11111116" };
                 Student st6 = new Student { Id = 6, Name = "Andriy", SurName = "Derdzyak", GroupId = 1, StudentBookNumber = "11111117" };
                 Student st7 = new Student { Id = 7, Name = "Orest", SurName = "Gurskuy", GroupId = 1, StudentBookNumber = "11111118" };
@@ -38,61 +38,20 @@ namespace StudentMonitoringSystem.Models
                 Student st18 = new Student { Id = 18, Name = "Orest-Andriy", SurName = "Senkiv", GroupId = 1, StudentBookNumber = "111111138" };
                 Student st19 = new Student { Id = 19, Name = "Oleg", SurName = "Yackiv", GroupId = 1, StudentBookNumber = "111111131" };
                 Student st20 = new Student { Id = 20, Name = "Roman", SurName = "Melnuk", GroupId = 1, StudentBookNumber = "111111132" };
-					
-					Subject s1 = new Subject {Id = 1, Name = "Informatic", Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};
-					Subject s2 = new Subject {Id = 2, Name = "DataBase",Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};
-					Subject s3 = new Subject {Id = 3, Name = "Web Design", Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};
-					Subject s4 = new Subject {Id = 4, Name = "History", Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};
-					Subject s5 = new Subject {Id = 5, Name = "Web Programming", Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};
-					Subject s6 = new Subject {Id = 6, Name = "OOP. C++", Students = new List<Student>() { st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, st12, st13, st14, st15, st16, st17, st18, st19, st20 }};
+					*/
+					Subject s1 = new Subject {Id = 1, Name = "Informatic", Students = new List<Student>() { st1, st2, st3}};
+					Subject s2 = new Subject {Id = 2, Name = "DataBase",Students = new List<Student>() { st1, st2, st3}};
+					Subject s3 = new Subject {Id = 3, Name = "Web Design", Students = new List<Student>() { st1, st2, st3}};
+					Subject s4 = new Subject {Id = 4, Name = "History", Students = new List<Student>() { st1, st2, st3}};
+					Subject s5 = new Subject {Id = 5, Name = "Web Programming", Students = new List<Student>() { st1, st2, st3}};
+					Subject s6 = new Subject {Id = 6, Name = "OOP. C++", Students = new List<Student>() { st1, st2, st3}};
 					
 					Lector l1 = new Lector {Id = 1, Name = "Andiy", SurName = "Korkyna", Grade = "Aspirant", Subjects = new List<Subject>() {s1, s2}};
 					Lector l2 = new Lector {Id = 2, Name = "Lesya", SurName = "Fundak", Grade = "Docent", Subjects = new List<Subject>() {s1, s6}};
 					Lector l3 = new Lector {Id = 3, Name = "Frodo", SurName = "Torbins", Grade = "Hobbit", Subjects = new List<Subject>() {s4}};
 					Lector l4 = new Lector {Id = 4, Name = "Lesya", SurName = "dobylyak@gmail.com", Grade = "Docent", Subjects = new List<Subject>() {s3,s5}};
 					
-					MarkPoint mp1 = new MarkPoint {Id = 1, Name = "Module1", maxValue = 10, SubjectId = 1 };
-					MarkPoint mp2 = new MarkPoint {Id = 2, Name = "Module2", maxValue = 10, SubjectId = 1  };
-					MarkPoint mp3 = new MarkPoint {Id = 3, Name = "HomeWork.Theme1", maxValue = 15, SubjectId = 1 };
-					MarkPoint mp4 = new MarkPoint {Id = 4, Name = "Module3", maxValue = 15, SubjectId = 1 };
-					MarkPoint mp5 = new MarkPoint {Id = 5, Name = "Exam", maxValue = 50, SubjectId = 1 };
 					
-					MarkPoint mp21 = new MarkPoint {Id = 6, Name = "Module1", maxValue = 25, SubjectId = 2  };
-					MarkPoint mp22 = new MarkPoint {Id = 7, Name = "Module2", maxValue = 25, SubjectId = 2 };
-					MarkPoint mp23 = new MarkPoint {Id = 8, Name = "Exam", maxValue = 50, SubjectId = 2  };
-					
-					MarkPoint mp31 = new MarkPoint {Id = 9, Name = "CustomProject.1", maxValue = 5, SubjectId =3  };
-					MarkPoint mp32 = new MarkPoint {Id = 10, Name = "CustomProject.2", maxValue = 5, SubjectId =3  };
-					MarkPoint mp33 = new MarkPoint {Id = 11, Name = "CustomProject.3", maxValue = 5, SubjectId =3  };
-					MarkPoint mp34 = new MarkPoint {Id = 12, Name = "CustomProject.4", maxValue = 5, SubjectId =3  };
-					MarkPoint mp35 = new MarkPoint {Id = 13, Name = "CustomProject.5", maxValue = 5, SubjectId =3  };
-					MarkPoint mp36 = new MarkPoint {Id = 14, Name = "CustomProject.6", maxValue = 5, SubjectId =3 };
-					MarkPoint mp37 = new MarkPoint {Id = 15, Name = "CustomProject.7", maxValue = 5, SubjectId =3  };
-					MarkPoint mp38 = new MarkPoint {Id = 16, Name = "CustomProject.8", maxValue = 5, SubjectId =3  };
-					MarkPoint mp39 = new MarkPoint {Id = 17, Name = "CustomProject.9", maxValue = 5, SubjectId =3 };
-					MarkPoint mp310 = new MarkPoint {Id = 18, Name = "CustomProject.10", maxValue = 5, SubjectId =3 };
-					MarkPoint mp311 = new MarkPoint {Id = 19, Name = "Exam", maxValue = 50, SubjectId =3 };
-					
-					MarkPoint mp41 = new MarkPoint {Id = 20, Name = "Test.1", maxValue = 10, SubjectId =4};
-					MarkPoint mp42 = new MarkPoint {Id = 21, Name = "Test.2", maxValue = 10, SubjectId =4 };
-					MarkPoint mp43 = new MarkPoint {Id = 22, Name = "Test.3", maxValue = 10, SubjectId =4 };
-					MarkPoint mp44 = new MarkPoint {Id = 23, Name = "Test.4", maxValue = 10, SubjectId =4 };
-					MarkPoint mp45 = new MarkPoint {Id = 24, Name = "Test.5", maxValue = 10, SubjectId =4 };
-					MarkPoint mp46 = new MarkPoint {Id = 25, Name = "Exam", maxValue = 50, SubjectId =4 };
-					
-					MarkPoint mp51 = new MarkPoint {Id = 26, Name = "Module1", maxValue = 10, SubjectId =5 };
-					MarkPoint mp52 = new MarkPoint {Id = 27, Name = "Module2", maxValue = 10, SubjectId =5 };
-					MarkPoint mp53 = new MarkPoint {Id = 28, Name = "CustomDataBase", maxValue = 30, SubjectId =5 };
-					MarkPoint mp54 = new MarkPoint {Id = 29, Name = "Exam", maxValue = 50, SubjectId =5 };
-					
-					MarkPoint mp61 = new MarkPoint {Id = 30, Name = "Task1", maxValue = 5, SubjectId =6 };
-					MarkPoint mp62 = new MarkPoint {Id = 31, Name = "Task2", maxValue = 15, SubjectId =6 };
-					MarkPoint mp63 = new MarkPoint {Id = 32, Name = "Task3", maxValue = 20, SubjectId =6 };
-					MarkPoint mp64 = new MarkPoint {Id = 33, Name = "Task4", maxValue = 15, SubjectId =6 };
-					MarkPoint mp65 = new MarkPoint {Id = 34, Name = "Task5", maxValue = 10, SubjectId =6 };
-					MarkPoint mp66 = new MarkPoint {Id = 35, Name = "Task6", maxValue = 15, SubjectId =6 };
-					MarkPoint mp67 = new MarkPoint {Id = 36, Name = "Task7", maxValue = 5, SubjectId =6 };
-					MarkPoint mp68 = new MarkPoint {Id = 37, Name = "Task8", maxValue = 15, SubjectId =6 };
 					
 					Mark m11 = new Mark {Id = 1, Value = 5, MarkPointId = 1, StudentId = 1  };
 					Mark m21 = new Mark {Id = 2, Value = 3, MarkPointId = 2, StudentId = 1  }; 
@@ -223,6 +182,48 @@ namespace StudentMonitoringSystem.Models
 					Mark m673 = new Mark {Id = 110, Value =5 , MarkPointId = 36, StudentId = 3};
 					Mark m683 = new Mark {Id = 111, Value =15 , MarkPointId = 37, StudentId = 3};
 
+                    MarkPoint mp1 = new MarkPoint { Id = 1, Name = "Module1", maxValue = 10, SubjectId = 1, Subject = s1, Marks = new List<Mark>() {m11,m12,m13 } };
+                    MarkPoint mp2 = new MarkPoint { Id = 2, Name = "Module2", maxValue = 10, SubjectId = 1, Subject = s1, Marks = new List<Mark>() { m21, m22, m33 } };
+                    MarkPoint mp3 = new MarkPoint { Id = 3, Name = "HomeWork.Theme1", maxValue = 15, SubjectId = 1, Subject = s1, Marks = new List<Mark>() { m31, m32, m33 } };
+                    MarkPoint mp4 = new MarkPoint { Id = 4, Name = "Module3", maxValue = 15, SubjectId = 1, Subject = s1, Marks = new List<Mark>() { m41, m42, m43 } };
+                    MarkPoint mp5 = new MarkPoint { Id = 5, Name = "Exam", maxValue = 50, SubjectId = 1, Subject = s1, Marks = new List<Mark>() { m51, m52, m53 } };
+
+                    MarkPoint mp21 = new MarkPoint { Id = 6, Name = "Module1", maxValue = 25, SubjectId = 2, Subject = s2, Marks = new List<Mark>() { m211, m212, m213 } };
+                    MarkPoint mp22 = new MarkPoint { Id = 7, Name = "Module2", maxValue = 25, SubjectId = 2, Subject = s2, Marks = new List<Mark>() { m221, m222, m223 } };
+                    MarkPoint mp23 = new MarkPoint { Id = 8, Name = "Exam", maxValue = 50, SubjectId = 2, Subject = s2, Marks = new List<Mark>() { m231, m232, m233 } };
+
+                    MarkPoint mp31 = new MarkPoint { Id = 9, Name = "CustomProject.1", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m311, m312, m313 } };
+                    MarkPoint mp32 = new MarkPoint { Id = 10, Name = "CustomProject.2", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m321, m322, m323 } };
+                    MarkPoint mp33 = new MarkPoint { Id = 11, Name = "CustomProject.3", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m331, m332, m333 } };
+                    MarkPoint mp34 = new MarkPoint { Id = 12, Name = "CustomProject.4", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m341, m342, m343 } };
+                    MarkPoint mp35 = new MarkPoint { Id = 13, Name = "CustomProject.5", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m351, m352, m353 } };
+                    MarkPoint mp36 = new MarkPoint { Id = 14, Name = "CustomProject.6", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m361, m362, m363 } };
+                    MarkPoint mp37 = new MarkPoint { Id = 15, Name = "CustomProject.7", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m371, m372, m373 } };
+                    MarkPoint mp38 = new MarkPoint { Id = 16, Name = "CustomProject.8", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m381, m382, m383 } };
+                    MarkPoint mp39 = new MarkPoint { Id = 17, Name = "CustomProject.9", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m391, m392, m393 } };
+                    MarkPoint mp310 = new MarkPoint { Id = 18, Name = "CustomProject.10", maxValue = 5, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m3101, m3102, m3103 } };
+                    MarkPoint mp311 = new MarkPoint { Id = 19, Name = "Exam", maxValue = 50, SubjectId = 3, Subject = s3, Marks = new List<Mark>() { m3111, m3112, m3113 } };
+
+                    MarkPoint mp41 = new MarkPoint { Id = 20, Name = "Test.1", maxValue = 10, SubjectId = 4, Subject = s4, Marks = new List<Mark>() { m411, m412, m413 } };
+                    MarkPoint mp42 = new MarkPoint { Id = 21, Name = "Test.2", maxValue = 10, SubjectId = 4, Subject = s4, Marks = new List<Mark>() { m421, m422, m423 } };
+                    MarkPoint mp43 = new MarkPoint { Id = 22, Name = "Test.3", maxValue = 10, SubjectId = 4, Subject = s4, Marks = new List<Mark>() { m431, m432, m433 } };
+                    MarkPoint mp44 = new MarkPoint { Id = 23, Name = "Test.4", maxValue = 10, SubjectId = 4, Subject = s4, Marks = new List<Mark>() { m441, m442, m443 } };
+                    MarkPoint mp45 = new MarkPoint { Id = 24, Name = "Test.5", maxValue = 10, SubjectId = 4, Subject = s4, Marks = new List<Mark>() { m451, m452, m453 } };
+                    MarkPoint mp46 = new MarkPoint { Id = 25, Name = "Exam", maxValue = 50, SubjectId = 4, Subject = s4, Marks = new List<Mark>() { m461, m462, m463 } };
+
+                    MarkPoint mp51 = new MarkPoint { Id = 26, Name = "Module1", maxValue = 10, SubjectId = 5, Subject = s5, Marks = new List<Mark>() { m511, m512, m513 } };
+                    MarkPoint mp52 = new MarkPoint { Id = 27, Name = "Module2", maxValue = 10, SubjectId = 5, Subject = s5, Marks = new List<Mark>() { m521, m522, m523 } };
+                    MarkPoint mp53 = new MarkPoint { Id = 28, Name = "CustomDataBase", maxValue = 30, SubjectId = 5, Subject = s5, Marks = new List<Mark>() { m531, m532, m533 } };
+                    MarkPoint mp54 = new MarkPoint { Id = 29, Name = "Exam", maxValue = 50, SubjectId = 5, Subject = s5, Marks = new List<Mark>() { m541, m542, m543 } };
+
+                    MarkPoint mp61 = new MarkPoint { Id = 30, Name = "Task1", maxValue = 5, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m611, m612, m613 } };
+                    MarkPoint mp62 = new MarkPoint { Id = 31, Name = "Task2", maxValue = 15, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m621, m622, m623 } };
+                    MarkPoint mp63 = new MarkPoint { Id = 32, Name = "Task3", maxValue = 20, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m631, m632, m633 } };
+                    MarkPoint mp64 = new MarkPoint { Id = 33, Name = "Task4", maxValue = 15, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m641, m642, m643 } };
+                    MarkPoint mp65 = new MarkPoint { Id = 34, Name = "Task5", maxValue = 10, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m651, m652, m653 } };
+                    MarkPoint mp66 = new MarkPoint { Id = 35, Name = "Task6", maxValue = 15, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m661, m662, m663 } };
+                    MarkPoint mp67 = new MarkPoint { Id = 36, Name = "Task7", maxValue = 5, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m671, m672, m673 } };
+                    MarkPoint mp68 = new MarkPoint { Id = 37, Name = "Task8", maxValue = 15, SubjectId = 6, Subject = s6, Marks = new List<Mark>() { m681, m682, m683 } };
                     //st1.setMark(new List<Mark>() { m11, m21, m31, m41, m51, m211, m221, m231, m311, m321, m331, m341, m351, m361, m371, m381, m391, m3101, m3111,
                       //                              m411, m421, m431, m441, m451, m461, m511, m521, m531, m541, m611, m621, m631, m641, m651, m661, m671, m681});
                     //st2.setMark(new List<Mark>() { m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682, m682 });
@@ -234,7 +235,7 @@ namespace StudentMonitoringSystem.Models
 				context.Student.Add(st1);
 				context.Student.Add(st2);
 				context.Student.Add(st3);
-				context.Student.Add(st4);
+				/*context.Student.Add(st4);
 				context.Student.Add(st5);
 				context.Student.Add(st6);
 				context.Student.Add(st7);
@@ -251,7 +252,7 @@ namespace StudentMonitoringSystem.Models
 				context.Student.Add(st18);
 				context.Student.Add(st19);
 				context.Student.Add(st20);
-				
+				*/
 				context.Lector.Add(l1);
 				context.Lector.Add(l2);
 				context.Lector.Add(l3);
@@ -264,48 +265,7 @@ namespace StudentMonitoringSystem.Models
 				context.Subject.Add(s5);
 				context.Subject.Add(s6);
 				
-				context.MarkPoint.Add(mp1);
-				context.MarkPoint.Add(mp2);
-				context.MarkPoint.Add(mp3);
-				context.MarkPoint.Add(mp4);
-				context.MarkPoint.Add(mp5);
 				
-				context.MarkPoint.Add(mp21);
-				context.MarkPoint.Add(mp22);
-				context.MarkPoint.Add(mp23);
-				
-				context.MarkPoint.Add(mp31);
-				context.MarkPoint.Add(mp32);
-				context.MarkPoint.Add(mp33);
-				context.MarkPoint.Add(mp34);
-				context.MarkPoint.Add(mp35);
-				context.MarkPoint.Add(mp36);
-				context.MarkPoint.Add(mp37);
-				context.MarkPoint.Add(mp38);
-				context.MarkPoint.Add(mp39);
-				context.MarkPoint.Add(mp310);
-				context.MarkPoint.Add(mp311);
-				
-				context.MarkPoint.Add(mp41);
-				context.MarkPoint.Add(mp42);
-				context.MarkPoint.Add(mp43);
-				context.MarkPoint.Add(mp44);
-				context.MarkPoint.Add(mp45);
-				context.MarkPoint.Add(mp46);
-				
-				context.MarkPoint.Add(mp51);
-				context.MarkPoint.Add(mp52);
-				context.MarkPoint.Add(mp53);
-				context.MarkPoint.Add(mp54);
-				
-				context.MarkPoint.Add(mp61);
-				context.MarkPoint.Add(mp62);
-				context.MarkPoint.Add(mp63);
-				context.MarkPoint.Add(mp64);
-				context.MarkPoint.Add(mp65);
-				context.MarkPoint.Add(mp66);
-				context.MarkPoint.Add(mp67);
-				context.MarkPoint.Add(mp68);
 				
 					context.Mark.Add(m11);
 					context.Mark.Add(m21); 
@@ -435,7 +395,48 @@ namespace StudentMonitoringSystem.Models
 					context.Mark.Add(m663);
 					context.Mark.Add(m673);
 					context.Mark.Add(m683);
-				
+                    context.MarkPoint.Add(mp1);
+                    context.MarkPoint.Add(mp2);
+                    context.MarkPoint.Add(mp3);
+                    context.MarkPoint.Add(mp4);
+                    context.MarkPoint.Add(mp5);
+
+                    context.MarkPoint.Add(mp21);
+                    context.MarkPoint.Add(mp22);
+                    context.MarkPoint.Add(mp23);
+
+                    context.MarkPoint.Add(mp31);
+                    context.MarkPoint.Add(mp32);
+                    context.MarkPoint.Add(mp33);
+                    context.MarkPoint.Add(mp34);
+                    context.MarkPoint.Add(mp35);
+                    context.MarkPoint.Add(mp36);
+                    context.MarkPoint.Add(mp37);
+                    context.MarkPoint.Add(mp38);
+                    context.MarkPoint.Add(mp39);
+                    context.MarkPoint.Add(mp310);
+                    context.MarkPoint.Add(mp311);
+
+                    context.MarkPoint.Add(mp41);
+                    context.MarkPoint.Add(mp42);
+                    context.MarkPoint.Add(mp43);
+                    context.MarkPoint.Add(mp44);
+                    context.MarkPoint.Add(mp45);
+                    context.MarkPoint.Add(mp46);
+
+                    context.MarkPoint.Add(mp51);
+                    context.MarkPoint.Add(mp52);
+                    context.MarkPoint.Add(mp53);
+                    context.MarkPoint.Add(mp54);
+
+                    context.MarkPoint.Add(mp61);
+                    context.MarkPoint.Add(mp62);
+                    context.MarkPoint.Add(mp63);
+                    context.MarkPoint.Add(mp64);
+                    context.MarkPoint.Add(mp65);
+                    context.MarkPoint.Add(mp66);
+                    context.MarkPoint.Add(mp67);
+                    context.MarkPoint.Add(mp68);
 					base.Seed(context);
 
 

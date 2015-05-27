@@ -44,6 +44,8 @@ namespace StudentMonitoringSystem.Controllers
         public ActionResult Index()
         {
             var lector = findLector();
+           
+            
             return View(lector.Subjects);
         }
 

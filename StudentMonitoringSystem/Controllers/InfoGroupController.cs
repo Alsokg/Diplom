@@ -20,9 +20,9 @@ namespace StudentMonitoringSystem.Controllers
         public ActionResult Index()
         {
             var group = db.Group.Include(g => g.Faculty).Include(s => s.Students);
-            ViewData["Students"] = db.Student;
-            ViewData["Marks"] = db.MarkPoint;
-            ViewData["Subjects"] = db.Subject;
+            Lector l = db.Lector.Find(4);
+            var Marks = db.Mark.ToList();
+            ViewBag.subjects = l.Subjects.ToList();
             return View(group.ToList());
         }
 

@@ -33,7 +33,7 @@
 }
 
 </table>
-<h2>Individual Table</h2>
+<h2>Group Table</h2>
 <style>
     .fluid-box {
         display: inline-block;
@@ -79,45 +79,58 @@
         overflow: auto;
     }
 </style>
+
+
+
 <div class="table">
-   
-    @foreach (var item1 in ViewData["Students"] as ICollection<StudentMonitoringSystem.Models.Student>)
-    {
-        var flag = 0;
+ 
+   @foreach (var subject in ViewBag.subjects as ICollection<StudentMonitoringSystem.Models.Subject>)
+{
+   <h4>@subject.Name</h4>
         <div class="table-c">
             <table class="table">
                 <tr>
-                    <td class="subName"><span>@item1.Name</span></td>
-
-
-                    @foreach (var point1 in item1.Subjects as ICollection<StudentMonitoringSystem.Models.Subject>)
+                    <th></th>
+                    @foreach (var markpoint in subject.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>)
                     {
-                        if (flag == 0)
-                        {
-                            foreach (var point in point1.Points as ICollection<StudentMonitoringSystem.Models.MarkPoint>) 
-                            { 
-                        <th>@point.Name 
-                    <p class="mark-point-maxValue">
-                            (@point.maxValue)</p></th>
+                        <th>@markpoint.Name</th>
+
                     }
+                </tr>
+                @{
+    var studentid = 1;
+                }
+                @foreach (var student in subject.Students as ICollection<StudentMonitoringSystem.Models.Student>)
+                {
+                    
+                    <tr>
+                        <th>@student.Name  @student.SurName</th>
+                        @foreach (var markpoint in subject.Points)
+                            {
+                           
+                            foreach (var mark in markpoint.Marks) {
+                                if (mark.StudentId == studentid) { 
+                            <td>@mark.Value</td>
                         }
-                        flag = 1;
-                    }
-                </tr>
-                <tr>
-                    @foreach (var point2 in item1.Marks as ICollection<StudentMonitoringSystem.Models.Mark>)
-                    {
-                       
+        
+                            }
+                                
+                            }
+                       @{
+                           studentid++;
+                           }
+                    </tr>
+                }
 
-                            <td>@point2.Value</td>
-                        
-                    }
-                </tr>
+
+                
+
             </table>
+
         </div>
         <div class="clearfix"></div>
-
-    }
+}
+    
 
 </div>
 
